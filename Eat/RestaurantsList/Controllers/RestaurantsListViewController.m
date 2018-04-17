@@ -7,7 +7,7 @@
 //
 
 #import "RestaurantsListViewController.h"
-#import "RestaurantDetailsViewController.h"
+#import "RestaurantDetailViewController.h"
 #import "RestaurantCollectionViewCell.h"
 #import "APIManager.h"
 #import <AFNetworking.h>
@@ -189,7 +189,7 @@
 
 - (void)openRestaurnatProfile:(RestaurantModel*)restaurant {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    RestaurantDetailsViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RestaurantDetailsViewController"];
+    RestaurantDetailViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RestaurantDetailViewController"];
     vc.restaurant = restaurant;
     [self.navigationController pushViewController:vc animated:YES];
     

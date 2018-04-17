@@ -1,5 +1,5 @@
 //
-//  MyCollectionViewLayout.h
+//  BooTableCell.h
 //  Eat
 //
 //  Created by Haris Muharemovic on 17/04/2018.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyCollectionViewLayout : UICollectionViewFlowLayout
-
-
+@interface BookTableCell : UITableViewCell
 
 @end
