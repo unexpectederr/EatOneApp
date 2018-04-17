@@ -91,6 +91,7 @@ NSString *const RESTAURANTS_BY_NEIGHBOURHOOD = @"RESTAURANTS_BY_NEIGHBOURHOOD";
     CGPoint contentOffset = CGPointMake(_detailsCollectionView.contentOffset.x, _detailsCollectionView.contentOffset.y);
     [_detailsCollectionView reloadData];
     //for some reason, when reloading cellectionview scrolls to top, so I made this workaround
+    //collectionViewLayout invalidateLayout is doing the same
     //didn't have enough time to deal with it properly
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.0001f * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [_detailsCollectionView setContentOffset:contentOffset animated:NO];
