@@ -47,8 +47,13 @@ static const int regionCellHeight = 75;
 
 - (void)getRegions {
     
+    RegionsViewController* __weak welf = self;
+
     [[APIManager sharedInstance] getRegions:^(id responseObject) {
         
+        RegionsViewController* strongSelf = welf;
+        if(!strongSelf) return;
+
         NSMutableArray *regions = [[NSMutableArray alloc] init];
         for (NSDictionary *regionResponse in responseObject) {
             NSError *error;
@@ -56,26 +61,37 @@ static const int regionCellHeight = 75;
             [regions addObject:region];
         }
         regionsArray = regions;
-        [self.regionsCollectionView reloadData];
-    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+        [strongSelf.regionsCollectionView reloadData];
         
-    }];
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {}];
 }
 
 - (void)getCuisines {
     
+    RegionsViewController* __weak welf = self;
+
     [[APIManager sharedInstance] getCuisines:^(id responseObject) {
-        [self checkIfListOfNeighbourhoodsAndCuisinesLoaded];
-    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
-    }];
+        
+        RegionsViewController* strongSelf = welf;
+        if(!strongSelf) return;
+        
+        [strongSelf checkIfListOfNeighbourhoodsAndCuisinesLoaded];
+    
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {}];
 }
 
 - (void)getNeigbourhoods {
     
+    RegionsViewController* __weak welf = self;
+
     [[APIManager sharedInstance] getNeighbourhoods:^(id responseObject) {
-        [self checkIfListOfNeighbourhoodsAndCuisinesLoaded];
-    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
-    }];
+        
+        RegionsViewController* strongSelf = welf;
+        if(!strongSelf) return;
+        
+        [strongSelf checkIfListOfNeighbourhoodsAndCuisinesLoaded];
+        
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {}];
 }
 
 - (void)checkIfListOfNeighbourhoodsAndCuisinesLoaded {

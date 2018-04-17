@@ -76,22 +76,32 @@ NSString *const RESTAURANTS_BY_NEIGHBOURHOOD = @"RESTAURANTS_BY_NEIGHBOURHOOD";
 
 - (void) getRestaurantsByRegion:(NSString*)region andCusine:(NSString*)cusine {
     
+    RestaurantDetailViewController* __weak welf = self;
+
     [[APIManager sharedInstance] getRestaurantsByRegion:region andCusine:cusine success:^(id responseObject) {
+        
+        RestaurantDetailViewController* strongSelf = welf;
+        if(!strongSelf) return;
         
         NSMutableArray *restaurants = [UIHelper createListOfRestaurnats:responseObject];
         
-        [self showRestaurantsByCuisine:restaurants];
+        [strongSelf showRestaurantsByCuisine:restaurants];
         
     } failure:^(NSURLSessionDataTask *operation, NSError *error) {}];
 }
 
 - (void)getRestaurantsByNeighbourhood:(NSString*)neighbourhood{
     
+    RestaurantDetailViewController* __weak welf = self;
+
     [[APIManager sharedInstance] getRestaurantsByNeighbourhood:neighbourhood success:^(id responseObject) {
+        
+        RestaurantDetailViewController* strongSelf = welf;
+        if(!strongSelf) return;
         
         NSMutableArray *restaurants = [UIHelper createListOfRestaurnats:responseObject];
         
-        [self showRestaurantsByNeighbourhood:restaurants];
+        [strongSelf showRestaurantsByNeighbourhood:restaurants];
         
     } failure:^(NSURLSessionDataTask *operation, NSError *error) {}];
 }

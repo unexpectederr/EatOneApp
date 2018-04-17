@@ -23,7 +23,6 @@
 
     NSMutableArray *restaurantsArray;
     int pageToLoad;
-    RestaurantsMapViewController *restaurantsMapView;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -35,7 +34,7 @@
     
     pageToLoad = 1;
     
-    [self getRestaurantsForRegion:_regionCode];
+    [self getRestaurantsForRegion:_regionCode andPage:pageToLoad];
 
     [_restaurantsCollectionView registerNib:[UINib nibWithNibName:@"RestaurantCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"restaurantCollectionViewCell"];
     
@@ -45,30 +44,37 @@
 
 }
 
-- (void)getRestaurantsForRegion:(NSString*)region {
+- (void)getRestaurantsForRegion:(NSString*)region andPage:(int)page {
     
+    RestaurantsListViewController* __weak welf = self;
+
     if (pageToLoad == 1 || [[APIManager sharedInstance].restaurantsLoadingLink containsString:[NSString stringWithFormat:@"page=%li", (long)pageToLoad]]) {
         
-        [[APIManager sharedInstance] getRestaurantsForRegion:region andPage:pageToLoad success:^(id responseObject) {
+        [[APIManager sharedInstance] getRestaurantsForRegion:region andPage:page success:^(id responseObject) {
+            
+            RestaurantsListViewController* strongSelf = welf;
+            if (!strongSelf) return;
             
             NSMutableArray *restaurants = [UIHelper createListOfRestaurnats:responseObject];
             
             if (restaurants.count) {
                 
-                if (pageToLoad > 1) {
-                    [self addNewSetOfRestaurnats:restaurants];
+                if (page > 1) {
+                    [strongSelf addNewSetOfRestaurnats:restaurants];
                 } else {
-                    [self showRestaurantsList:restaurants];
+                    [strongSelf showRestaurantsList:restaurants];
                 }
             } else {
-                [self showEmptyContainer];
+                [strongSelf showEmptyContainer];
             }
             
         } failure:^(NSURLSessionDataTask *operation, NSError *error) {
-            [self showEmptyContainer];
+            RestaurantsListViewController* strongSelf = welf;
+            if (strongSelf)
+                [strongSelf showEmptyContainer];
         }];
         
-    } else if (pageToLoad > 1) {
+    } else if (page > 1) {
         
         [self removeLoadingItem];
         
@@ -176,7 +182,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == restaurantsArray.count-1) {
-        [self getRestaurantsForRegion:_regionCode];
+        [self getRestaurantsForRegion:_regionCode andPage:pageToLoad];
     }
 }
 
