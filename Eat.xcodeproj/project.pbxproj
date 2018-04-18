@@ -61,6 +61,10 @@
 		AFD29CF4207A2394008AFF9F /* RatingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD29CF3207A2394008AFF9F /* RatingModel.m */; };
 		AFD29CF8207A35CA008AFF9F /* UIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD29CF7207A35CA008AFF9F /* UIHelper.m */; };
 		AFD29CFE207A3A91008AFF9F /* NSString+Repeat.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD29CFD207A3A91008AFF9F /* NSString+Repeat.m */; };
+		AFF3B1AD2087460E00C1392E /* EmptyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF3B1AB2087460D00C1392E /* EmptyCell.m */; };
+		AFF3B1AE2087460E00C1392E /* EmptyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFF3B1AC2087460D00C1392E /* EmptyCell.xib */; };
+		AFF3B1B920875E9A00C1392E /* CuisineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF3B1B720875E9A00C1392E /* CuisineModel.m */; };
+		AFF3B1BC20875EAA00C1392E /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF3B1BB20875EAA00C1392E /* CacheManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,6 +159,13 @@
 		AFD29CF7207A35CA008AFF9F /* UIHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIHelper.m; sourceTree = "<group>"; };
 		AFD29CFC207A3A90008AFF9F /* NSString+Repeat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Repeat.h"; sourceTree = "<group>"; };
 		AFD29CFD207A3A91008AFF9F /* NSString+Repeat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Repeat.m"; sourceTree = "<group>"; };
+		AFF3B1AA2087460D00C1392E /* EmptyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyCell.h; sourceTree = "<group>"; };
+		AFF3B1AB2087460D00C1392E /* EmptyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyCell.m; sourceTree = "<group>"; };
+		AFF3B1AC2087460D00C1392E /* EmptyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyCell.xib; sourceTree = "<group>"; };
+		AFF3B1B720875E9A00C1392E /* CuisineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CuisineModel.m; sourceTree = "<group>"; };
+		AFF3B1B820875E9A00C1392E /* CuisineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CuisineModel.h; sourceTree = "<group>"; };
+		AFF3B1BA20875EAA00C1392E /* CacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheManager.h; sourceTree = "<group>"; };
+		AFF3B1BB20875EAA00C1392E /* CacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +258,9 @@
 				AF7EF297207CA89F003C56BD /* RestaurantSmallCollectionViewCell.h */,
 				AF7EF298207CA89F003C56BD /* RestaurantSmallCollectionViewCell.m */,
 				AF7EF299207CA89F003C56BD /* RestaurantSmallCollectionViewCell.xib */,
+				AFF3B1AA2087460D00C1392E /* EmptyCell.h */,
+				AFF3B1AB2087460D00C1392E /* EmptyCell.m */,
+				AFF3B1AC2087460D00C1392E /* EmptyCell.xib */,
 			);
 			name = Views;
 			path = ViewsNew;
@@ -333,6 +347,8 @@
 		AFD29CBE2079F2AA008AFF9F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AFF3B1B820875E9A00C1392E /* CuisineModel.h */,
+				AFF3B1B720875E9A00C1392E /* CuisineModel.m */,
 				AFD29CCA2079F99D008AFF9F /* RegionModel.h */,
 				AFD29CCB2079F99D008AFF9F /* RegionModel.m */,
 			);
@@ -391,6 +407,8 @@
 		AFD29CF5207A35AE008AFF9F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				AFF3B1BA20875EAA00C1392E /* CacheManager.h */,
+				AFF3B1BB20875EAA00C1392E /* CacheManager.m */,
 				AFD29CF6207A35CA008AFF9F /* UIHelper.h */,
 				AFD29CF7207A35CA008AFF9F /* UIHelper.m */,
 				AFD29CFC207A3A90008AFF9F /* NSString+Repeat.h */,
@@ -409,8 +427,8 @@
 			isa = PBXGroup;
 			children = (
 				AFD29D00207A4302008AFF9F /* Controllers */,
-				AF8CD3792084AE1200F18173 /* Views */,
 				AF8CD37F2084AFEC00F18173 /* Models */,
+				AF8CD3792084AE1200F18173 /* Views */,
 			);
 			path = RestaurantProfile;
 			sourceTree = "<group>";
@@ -496,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF856788207CEE7F00143BCD /* TripAdvisorRevCollectionViewCell.xib in Resources */,
+				AFF3B1AE2087460E00C1392E /* EmptyCell.xib in Resources */,
 				AFAC50A420850661000ABF61 /* ImageItemCollectionViewCell.xib in Resources */,
 				AFD29CD42079FEDE008AFF9F /* RegionCollectionViewCell.xib in Resources */,
 				AFD29CB02079F228008AFF9F /* LaunchScreen.storyboard in Resources */,
@@ -528,12 +547,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Eat/Pods-Eat-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -574,6 +591,7 @@
 				AFD29CCC2079F99D008AFF9F /* RegionModel.m in Sources */,
 				AF7EF29A207CA89F003C56BD /* RestaurantSmallCollectionViewCell.m in Sources */,
 				AF7EF284207B99C5003C56BD /* MarkerInfoView.m in Sources */,
+				AFF3B1BC20875EAA00C1392E /* CacheManager.m in Sources */,
 				AFD29CE9207A0F70008AFF9F /* RestaurantModel.m in Sources */,
 				AF856787207CEE7F00143BCD /* TripAdvisorRevCollectionViewCell.m in Sources */,
 				AFD29CF8207A35CA008AFF9F /* UIHelper.m in Sources */,
@@ -594,10 +612,12 @@
 				AFD29CF4207A2394008AFF9F /* RatingModel.m in Sources */,
 				AF578F87207B7CD800CF6190 /* NavigationBarItems.m in Sources */,
 				AFD29CA22079F228008AFF9F /* AppDelegate.m in Sources */,
+				AFF3B1AD2087460E00C1392E /* EmptyCell.m in Sources */,
 				AFD29CFE207A3A91008AFF9F /* NSString+Repeat.m in Sources */,
 				AF85677A207CDEB300143BCD /* TripAdvisorReviewsViewController.m in Sources */,
 				AFC044F02086813B00BCF146 /* SimilarRestaurantsCell.m in Sources */,
 				AFD29CF1207A21C0008AFF9F /* ReviewModel.m in Sources */,
+				AFF3B1B920875E9A00C1392E /* CuisineModel.m in Sources */,
 				AFC044F52086813B00BCF146 /* ImagesPagerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

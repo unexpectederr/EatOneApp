@@ -21,7 +21,7 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Jst-cU-EOn">
                                 <rect key="frame" x="197" y="25" width="20" height="20"/>
                             </activityIndicatorView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xdN-tm-UFc">
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xdN-tm-UFc">
                                 <rect key="frame" x="50" y="156.33333333333334" width="314" height="495.66666666666663"/>
                                 <color key="backgroundColor" red="0.9840453388" green="0.97929149660000003" blue="0.98879918109999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ehV-Ps-7KA">
@@ -48,7 +48,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your location to start exploring restaurants around you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rad-Ao-DR4">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your location to start exploring restaurants around you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rad-Ao-DR4">
                                 <rect key="frame" x="30" y="95.666666666666657" width="354" height="40.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.34535527939999999" green="0.35297033630000002" blue="0.34129209389999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -78,13 +78,14 @@
                     <connections>
                         <outlet property="loader" destination="Jst-cU-EOn" id="WEG-7n-RhZ"/>
                         <outlet property="regionsCollectionView" destination="xdN-tm-UFc" id="b7v-gM-439"/>
+                        <outlet property="welcomeLabel" destination="Rad-Ao-DR4" id="DdA-0C-XUe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="310" y="7"/>
         </scene>
-        <!--Restaurant Detail View Controller-->
+        <!--Restaurant Details-->
         <scene sceneID="oWo-r2-gm8">
             <objects>
                 <viewController storyboardIdentifier="RestaurantDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rLP-N7-bHO" customClass="RestaurantDetailViewController" sceneMemberID="viewController">
@@ -110,6 +111,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DS9-g8-mIQ"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Restaurant Details" id="2vS-f0-B2v">
+                        <barButtonItem key="backBarButtonItem" title=" " id="4ft-4v-WNA"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="detailsTableView" destination="jv0-X4-Cwo" id="gS3-PV-OId"/>
                     </connections>

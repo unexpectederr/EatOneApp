@@ -59,4 +59,10 @@ static const int restaurantCellWidth = 140;
     return CGSizeMake(restaurantCellWidth, collectionView.bounds.size.height-10);
 }
 
+#pragma <UICollectionViewDelegate>
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self.delegate didTapOnRestaurant:restaurantsArray[indexPath.row]];
+}
+
 @end
