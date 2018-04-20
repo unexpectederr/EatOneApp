@@ -142,8 +142,16 @@
         
         if (restaurant.isLoadingItem) {
             [_restaurantsArray removeObject:restaurant];
+
+            RestaurantsListViewController* __weak welf = self;
+
             [_restaurantsCollectionView performBatchUpdates:^{
-                [_restaurantsCollectionView deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:i inSection:0]]];
+                
+                RestaurantsListViewController* strongSelf = welf;
+                if(!strongSelf) return;
+                
+                [strongSelf.restaurantsCollectionView deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:i inSection:0]]];
+                
             } completion:^(BOOL finished) {}];
             break;
         }
