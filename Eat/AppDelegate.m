@@ -20,14 +20,7 @@
     // Override point for customization after application launch.
     _baseURL = @"https://api.eatapp.co/";
     [GMSServices provideAPIKey:@"AIzaSyADnNrdPUaLY0UFdDDH_1bw-rrq7VcuQxM"];
-    return YES;
-    
-    
-    
-    
-    
-    
-    
+    return YES;  
 }
 
 
