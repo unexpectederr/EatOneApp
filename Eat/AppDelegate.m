@@ -22,7 +22,7 @@
     [GMSServices provideAPIKey:@"AIzaSyADnNrdPUaLY0UFdDDH_1bw-rrq7VcuQxM"];
     return YES;
     
-    //ceck..br_2
+    //ceck..br_2.............
 
 }
 
